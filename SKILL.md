@@ -15,7 +15,7 @@ START_task
 The agent guides the system through 5 stages:
 1. Initialization (context audit, identification of missing requirements and constraints).
 2. Contract (translation of initial conditions into measurable Criteria).
-3. PROPOSE and HOLD (generation of a Hypothesis pool strictly adhering to the Contract and holding them in Superposition).
+3. PROPOSE and HOLD (generation of a Hypothesis pool using the Contract as a recommended guiding vector and holding them in Superposition).
 4. EVALUATE (routing and launching the audit: Lite, Medium, High).
 5. COLLAPSE-PREP (aggregation of standardized scores and transferring the final decision rights to the user).
 END_task
@@ -42,11 +42,12 @@ START_phase_contract
 TRIGGER: Initial conditions received.
 ACTION: Formulation of 3-5 fundamental evaluation criteria based on the initial conditions.
 GOAL: Approved Contract (Criteria).
+Rule: The Contract has a dual role. For EVALUATE it is a protocol — the strict, mandatory basis of the audit. For PROPOSE it is a guide — a recommended directing vector, not a guarantee.
 END_phase_contract
 
 START_phase_propose_and_hold
 TRIGGER: Contract approved.
-ACTION: Enter Superposition. Generate a pool of hypotheses (PROPOSE) strictly adhering to the Contract. Keep all hypotheses completely equal (HOLD).
+ACTION: Enter Superposition. Generate a pool of hypotheses (PROPOSE) using the Contract as a recommended guiding vector (guide regime). Keep all hypotheses completely equal (HOLD).
 GOAL: User-approved pool of equal candidates for evaluation.
 Rationale: Prematurely highlighting a favorite forces the model into a local optimum and devalues the objective audit.
 END_phase_propose_and_hold
